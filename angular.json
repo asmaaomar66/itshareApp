@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "itshareApp"
+  "defaultProject": "itshareApp",
+  "cli": {
+    "analytics": "17287fa1-11cf-41f7-8574-8212ed7a2547"
+  }
 }
