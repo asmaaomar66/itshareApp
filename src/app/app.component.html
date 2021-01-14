@@ -1,1 +1,75 @@
-<my-first></my-first>
+<!-- directive component -->
+<!-- <my-first [isFav]='favStat' (change)="favChange()">
+  <div class="heading">My Custom Header Here</div>
+  <div class="body">Itshare course</div>
+</my-first> -->
+<!-- <span class="glyphicon" [class.glyphicon-heart]="isFav" [class.glyphicon-heart-empty]="!isFav"
+(click)="onFavClick()">
+
+</span> -->
+
+<!-- pipes -->
+<!-- <div>
+
+
+  {{ employees.salary | currency:'usd':true}}
+
+</div> -->
+
+<!-- custom pipes -->
+<!-- <div>
+  {{ name | summary }}
+</div> -->
+
+
+
+
+<!-- structure directive > ngFor -->
+<structure-directive></structure-directive>
+<ul>
+  <li *ngFor="let p of persons; let i=index"> {{i+1}} - {{p}}</li>
+</ul>
+<!-- ngFor Group By for Nested Array of Objects -->
+<ul *ngFor="let group of peopleByCountry">
+  <li>{{ group.country }}</li>
+  <ul>
+    <li *ngFor="let people of group.names">{{people.name}}</li>
+  </ul>
+</ul>
+
+<!-- ngFor add and remove items and trackBy -->
+<button (click)="onAdd()">ADD</button>
+<ul>
+  <li *ngFor="let course of courses ; trackBy: trackByCourse">
+    {{course.courseName}}
+    <button (click)="onRemove(course)">remove</button>
+  </li>
+</ul>
+
+<!-- ngIf  > for show is found courses or not? -->
+<div *ngIf="courses.length > 0">
+  <ul>
+    <li *ngFor="let course of courses ; trackBy: trackByCourse">
+      {{course.courseName}}
+      <button (click)="onRemove(course)">remove</button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="courses.length == 0">
+  NO COURSES YET
+</div>
+<!-- anther way to ngIf with ngTemplate -->
+<div *ngIf="courses.length > 0 ; then coursesList else noCourses"></div>
+<ng-template #coursesList>
+  <ul>
+    <li *ngFor="let course of courses ; trackBy: trackByCourse">
+      {{course.courseName}}
+      <button (click)="onRemove(course)">remove</button>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #noCourses>
+  No courses yet
+</ng-template>

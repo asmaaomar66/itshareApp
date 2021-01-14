@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { BDServices } from '../db.services';
 
 @Component({
@@ -8,8 +8,26 @@ import { BDServices } from '../db.services';
 })
 export class MyFirstComponent  {
 
-  courseName = "Angular"
-  imageUrl = "https://images.unsplash.com/photo-1610218428597-3bf05e80a29d?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  //input property
+  // @Input() isFav: boolean = false;
 
-  colSpan = 3;
+  // @Output() change = new EventEmitter();
+
+  // onFavClick(){
+  //   this.isFav = !this.isFav;
+  //   this.change.emit();
+  // }
+  // // templete variablies
+  // onKeyUp(){}
+  // //pipes
+  // employees =
+  // {
+  //   fullName : "asmaa omar",
+  //   rating : 5.79 ,
+  //   salary :5000 ,
+  //   hiringDate : new Date(2015,5,1)
+  // }
+
+  // //custom pipes
+  // name='hjklkmjnhbg';
 }

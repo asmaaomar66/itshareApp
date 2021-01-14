@@ -6,15 +6,21 @@ import { AppComponent } from './app.component';
 import { MyFirstComponent } from './my-first/my-first.component';
 import { BDServices } from './db.services';
 import { ItshareApiService } from './services/itshare-api.service';
+import { FormsModule } from '@angular/forms';
+import { SummaryPipe } from './summary.pipe';
+import { StructureDirectiveComponent } from './structure-directive/structure-directive.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyFirstComponent,
+    SummaryPipe,
+    StructureDirectiveComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     BDServices,

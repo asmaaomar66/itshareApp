@@ -1,0 +1,35 @@
+<!-- <button type="button" class="btn btn-primary" [class.active]="isAcctive">Primary</button>
+
+<button [style.backgroundColor]="isAcctive? 'yellow' : 'black' ">itshare</button>
+
+<button (click)="methodName()">save</button>
+
+
+<div (click)="divclick()">
+  <button (click)="btnclick($event)">save db</button>
+</div> -->
+<!-- event filter and templete variablies -->
+<!-- <input [(#firstname)] (keyup.enter)="onKeyUp(firstname.value)" type="text"> -->
+
+<!-- two way binding > banana inbox -->
+<input [(ngModel)]="firstname" (keyup.enter)="onKeyUp()" type="text">
+<div>
+  {{firstname}}
+</div>
+
+
+//file app.component.ts
+//isAcctive = true;
+
+  //nameVal: any ;
+
+  // methodName(){
+  //     alert('welcom to alert');
+  // }
+  // divclick(){
+  //   console.log("div click");
+  // }
+  // btnclick($event: { stopPropagation: () => void; }){
+  //   $event.stopPropagation();
+  //   console.log("btn click");
+  // }
