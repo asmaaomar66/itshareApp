@@ -25,7 +25,6 @@
 
 
 <!-- structure directive > ngFor -->
-<structure-directive></structure-directive>
 <ul>
   <li *ngFor="let p of persons; let i=index"> {{i+1}} - {{p}}</li>
 </ul>
@@ -73,3 +72,43 @@
 <ng-template #noCourses>
   No courses yet
 </ng-template>
+<!-- ngIf vs Hidden Properity -->
+<div [hidden]="courses.length === 0">
+  <ul>
+    <li *ngFor="let course of courses ; trackBy: trackByCourse">
+      {{course.courseName}}
+      <button (click)="onRemove(course)">remove</button>
+    </li>
+  </ul>
+</div>
+
+<div [hidden]="courses.length > 0">
+  NO course
+</div>
+
+<!-- ngSwitchCase -->
+<ul class="nav nav-pills">
+  <li [class.active]="defaultView === 'Courses'">
+    <a (click)="setView ('Courses')" >Courses</a>
+  </li>
+  <li [class.active]="defaultView === 'Certifications'">
+    <a (click)="setView ('Certifications')" >Certifications</a>
+  </li>
+</ul>
+
+<div [ngSwitch]="defaultView">
+  <div *ngSwitchCase="'Courses'">List of Courses</div>
+  <div *ngSwitchCase="'Certifications'">List of Certifications</div>
+</div>
+
+<!-- ngStyle -->
+<button [ngStyle]="
+{
+  'backgroundColor' : whatColor? 'yellow' :'gray' ,
+  'color' :  whatColor? 'red' :'black' ,
+  'fontWeight' : whatColor? 'bold' :'normal'
+}
+">Style</button>
+
+<!-- Custom Directives -->
+<input type="text" CustomDirectives [format]="'toUpperCase'">

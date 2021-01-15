@@ -65,4 +65,17 @@ export class AppComponent {
     this.courses.splice(index,1);
   }
 
+
+  //ngSwitchCase
+  defaultView='Courses';
+
+  setView (selectedView:any){
+    this.defaultView = selectedView;
+  }
+
+  //ngStyle
+  whatColor = true;
+
+  //Custom Directives
+  
 }

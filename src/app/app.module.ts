@@ -8,14 +8,14 @@ import { BDServices } from './db.services';
 import { ItshareApiService } from './services/itshare-api.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
-import { StructureDirectiveComponent } from './structure-directive/structure-directive.component';
+import { CustomDirectivesDirective } from './custom-directives.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyFirstComponent,
     SummaryPipe,
-    StructureDirectiveComponent,
+    CustomDirectivesDirective,
   ],
   imports: [
     BrowserModule,

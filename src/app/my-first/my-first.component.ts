@@ -8,7 +8,6 @@ import { BDServices } from '../db.services';
 })
 export class MyFirstComponent  {
 
-  //input property
   // @Input() isFav: boolean = false;
 
   // @Output() change = new EventEmitter();
