@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { MyFirstComponent } from './my-first/my-first.component';
 import { BDServices } from './db.services';
 import { ItshareApiService } from './services/itshare-api.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { CustomDirectivesDirective } from './custom-directives.directive';
+import { CustomFormsModule } from 'ng2-validation'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { CustomDirectivesDirective } from './custom-directives.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CustomFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     BDServices,
