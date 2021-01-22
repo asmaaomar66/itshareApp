@@ -5,7 +5,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 })
 export class CustomDirectivesDirective {
 
-  @Input('format') format :any;
+  @Input('format') format: any;
 
   constructor(private ref: ElementRef) { }
 
@@ -16,16 +16,16 @@ export class CustomDirectivesDirective {
 
   @HostListener('blur') onBlur(){
 
-    let getValue :string = this.ref.nativeElement.value;
-    if(this.format === "toUpperCase"){
+    const getValue: string = this.ref.nativeElement.value;
+    if (this.format === 'toUpperCase'){
 
-      this.ref.nativeElement.value=getValue.toUpperCase();
+      this.ref.nativeElement.value = getValue.toUpperCase();
 
-    }else if(this.format === "toLowerCase"){
+    }else if (this.format === 'toLowerCase'){
 
-      this.ref.nativeElement.value=getValue.toLowerCase();
+      this.ref.nativeElement.value = getValue.toLowerCase();
     }else{
-      this.ref.nativeElement.value=getValue.toLowerCase();
+      this.ref.nativeElement.value = getValue.toLowerCase();
     }
 
   }

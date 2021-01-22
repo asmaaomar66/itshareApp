@@ -7,9 +7,9 @@ export class SummaryPipe implements PipeTransform {
 
   transform(value: String): any {
 
-    if(!value) return null;
+    if (!value) { return null; }
 
-    return value.substr(0,4)+ '....';
+    return value.substr(0, 4) + '....';
   }
 
 }
