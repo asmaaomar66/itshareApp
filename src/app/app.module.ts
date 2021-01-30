@@ -17,6 +17,17 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatrialComponent } from './matrial/matrial.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -31,6 +42,7 @@ import { LogInComponent } from './log-in/log-in.component';
     AdminOrdersComponent,
     ShoppingCartComponent,
     LogInComponent,
+    MatrialComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,10 +54,24 @@ import { LogInComponent } from './log-in/log-in.component';
     NgbPaginationModule,
     NgbAlertModule,
     NgbModule,
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule
+  ],
+  exports : [
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [
     BDServices,
-    ItshareApiService
+    ItshareApiService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
